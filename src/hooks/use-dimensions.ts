@@ -1,7 +1,18 @@
-import { Dimensions } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Dimensions, ScaledSize } from 'react-native';
 
 export const useDimensions = (screenPadding = 0) => {
-  const { fontScale, height, scale, width: screenWidth } = Dimensions.get('window');
+  const [window, setWindow] = useState<ScaledSize>(() => Dimensions.get('window'));
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', ({ window: nextWindow }) => {
+      setWindow(nextWindow);
+    });
+
+    return () => subscription.remove();
+  }, []);
+
+  const { fontScale, height, scale, width: screenWidth } = window;
 
   const contentWidth = screenWidth - screenPadding * 2;
 
