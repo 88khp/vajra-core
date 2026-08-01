@@ -66,6 +66,10 @@ const CoreTextInputComponent = forwardRef<TextInput, TCoreTextInputProps>(
             rounded,
           }),
           { color, fontSize, lineHeight, fontWeight, letterSpacing },
+          // react-native-web renders TextInput as a real DOM <input>, which
+          // gets a browser-default focus outline (usually blue) with no
+          // native-platform equivalent to preserve — suppress it by default.
+          { outlineWidth: 0 },
           style,
         ]}
         {...rest}
