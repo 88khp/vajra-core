@@ -26,6 +26,8 @@
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://www.npmjs.com/package/@devraj-labs/vajra-ui-core)
 [![license](https://img.shields.io/npm/l/@devraj-labs/vajra-ui-core)](./LICENSE)
 
+<p><a href="https://devraj-labs.github.io/vajra-ui-core/"><strong>Documentation</strong></a></p>
+
 <br />
 
 <img src="./docs/box/box-example.png" height="500" />&nbsp;<img src="./docs/row/row-example.png" height="500" />&nbsp;<img src="./docs/col/col-example.png" height="500" />
