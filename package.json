@@ -19,7 +19,7 @@
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "prepare": "husky",
+    "prepare": "node -e \"process.exit(require('fs').existsSync('.git') ? 0 : 1)\" && husky || true",
     "release": "npm run build && npm publish --access public"
   },
   "keywords": [
