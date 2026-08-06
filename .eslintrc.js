@@ -65,6 +65,7 @@ module.exports = {
     'check-file/filename-naming-convention': [
       'error',
       { '**/*.{ts,tsx}': 'KEBAB_CASE' },
+      { ignoreMiddleExtensions: true },
     ],
   },
   env: {
