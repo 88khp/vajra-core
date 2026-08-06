@@ -1,6 +1,6 @@
 {
   "name": "@devraj-labs/vajra-ui-core",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Headless, zero-dependency React Native layout and primitive components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
