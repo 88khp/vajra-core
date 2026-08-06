@@ -1,0 +1,16 @@
+.pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pair > :last-child {
+  width: 100%;
+  margin: 0;
+}
+
+.pair > :last-child pre {
+  margin: 0;
+  max-height: 420px;
+}

@@ -1,0 +1,97 @@
+---
+id: grid
+title: Grid
+sidebar_position: 4
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Grid, Row, Box } from '@devraj-labs/vajra-ui-core';
+
+# Grid
+
+Compound component (`Grid.Root` + `Grid.Item`) for responsive grid layouts. `Grid.Item` calculates its own width from `Dimensions.get('window')`, column count, column gap, and span, items always fit exactly without manual maths. This assumes the grid fills the device's full screen width, which holds in a real app but not inside this docs page's preview card, so the live preview below uses a plain `Row` with percentage widths instead. The code sample is the real, correct `Grid.Item` usage.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Box borderWidth={1} borderColor="#e5e7eb" rounded={8} p={12} style={{ width: '100%' }}>
+    <Row gap={12} style={{ flexWrap: 'wrap' }}>
+      <Box h={60} bg="#2563EB" rounded={8} style={{ width: 'calc(50% - 6px)' }} />
+      <Box h={60} bg="#93c5fd" rounded={8} style={{ width: 'calc(50% - 6px)' }} />
+      <Box h={40} bg="#d1d5db" rounded={8} style={{ width: '100%' }} />
+    </Row>
+  </Box>
+</ComponentPreview>
+
+```tsx
+import { Grid } from '@devraj-labs/vajra-ui-core';
+
+const PADDING = 16;
+const GAP = 12;
+
+<Grid.Root columns={2} gap={GAP}>
+  <Grid.Item span={1} columns={2} colGap={GAP} screenPadding={PADDING}>
+    <Card />
+  </Grid.Item>
+  <Grid.Item span={1} columns={2} colGap={GAP} screenPadding={PADDING}>
+    <Card />
+  </Grid.Item>
+</Grid.Root>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Grid } from '@devraj-labs/vajra-ui-core';
+
+const PADDING = 16;
+const GAP = 12;
+
+<Grid.Root columns={2} gap={GAP}>
+  <Grid.Item span={1} columns={2} colGap={GAP} screenPadding={PADDING}>
+    <Card />
+  </Grid.Item>
+  <Grid.Item span={1} columns={2} colGap={GAP} screenPadding={PADDING}>
+    <Card />
+  </Grid.Item>
+</Grid.Root>
+```
+
+> Pass the same `gap` / `columns` values to both `Grid.Root` and `Grid.Item` so widths are calculated correctly.
+
+## API
+
+### Grid.Root
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `columns` | `1–12` | `2` | Total number of columns |
+
+Also accepts all [`Box` props](./box). `direction` is fixed to `"row"` and `wrap` is fixed to `"wrap"`.
+
+### Grid.Item
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `span` | `1–12` | `1` | Number of columns this item spans |
+| `columns` | `1–12` | `2` | Total columns in the grid (must match `Grid.Root`) |
+| `colGap` | `number` | `0` | Column gap (must match `Grid.Root gap`) |
+| `screenPadding` | `number` | `0` | Horizontal screen padding subtracted from available width |
+
+Also accepts all [`Box` props](./box).
+
+### Width formula
+
+```
+contentWidth   = screenWidth - screenPadding × 2
+singleColWidth = (contentWidth - colGap × (columns − 1)) / columns
+itemWidth      = singleColWidth × span + colGap × (span − 1)
+```
+
+## Example
+
+<ExampleImage src="/img/grid-example.png" alt="Grid example" />

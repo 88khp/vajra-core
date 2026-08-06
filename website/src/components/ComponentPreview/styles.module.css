@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 120px;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-code-border-radius);
+  background: var(--vajra-preview-bg);
+  box-sizing: border-box;
+}
+
+/* react-native-web renders Text as a <p>, which inherits Infima's global
+   paragraph margin-bottom (1.25rem / 20px) — invisible for loosely-spaced
+   examples, but catastrophic for anything centered inside a small fixed-size
+   box, where it silently pushes content outside its own container. Previews
+   are isolated component demos, not prose. */
+.card :global(p) {
+  margin: 0;
+}

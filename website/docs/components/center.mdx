@@ -1,0 +1,50 @@
+---
+id: center
+title: Center
+sidebar_position: 5
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Center, Box } from '@devraj-labs/vajra-ui-core';
+
+# Center
+
+`Box` preset with `align="center"` and `justify="center"` applied automatically. Perfect for loading states, empty states, icon containers, and anything that needs to be centred inside its parent.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Center w={160} h={100} bg="#f3f4f6" rounded={8}>
+    <Box w={32} h={32} bg="#2563EB" rounded={16} />
+  </Center>
+</ComponentPreview>
+
+```tsx
+import { Center } from '@devraj-labs/vajra-ui-core';
+
+<Center w={160} h={100} bg="#f3f4f6" rounded={8}>
+  <Spinner />
+</Center>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Center } from '@devraj-labs/vajra-ui-core';
+
+<Center flex={1}>
+  <Spinner />
+</Center>
+```
+
+## API
+
+Accepts all [`Box` props](./box). The `align` and `justify` props are fixed and cannot be overridden.
+
+## Example
+
+<ExampleImage src="/img/center-example.png" alt="Center example" />

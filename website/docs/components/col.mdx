@@ -1,0 +1,53 @@
+---
+id: col
+title: Col
+sidebar_position: 3
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Col } from '@devraj-labs/vajra-ui-core';
+
+# Col
+
+`Box` preset with `direction="column"` applied automatically. Use it for vertical stacks, form fields, card content, list items, settings rows, notification feeds.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Col gap={8} p={16} bg="#f3f4f6" rounded={8} w={180}>
+    <Col h={14} bg="#111827" rounded={4} />
+    <Col h={10} w={120} bg="#9ca3af" rounded={4} />
+  </Col>
+</ComponentPreview>
+
+```tsx
+import { Col } from '@devraj-labs/vajra-ui-core';
+
+<Col gap={8} p={16} bg="#f3f4f6" rounded={8}>
+  <Title />
+  <Subtitle />
+</Col>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Col } from '@devraj-labs/vajra-ui-core';
+
+<Col gap={8} p={16}>
+  <Title />
+  <Subtitle />
+</Col>
+```
+
+## API
+
+Accepts all [`Box` props](./box). The `direction` prop is fixed to `"column"` and cannot be overridden.
+
+## Example
+
+<ExampleImage src="/img/col-example.png" alt="Col example" />

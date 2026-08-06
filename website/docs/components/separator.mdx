@@ -1,0 +1,69 @@
+---
+id: separator
+title: Separator
+sidebar_position: 8
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Separator, Row, Box } from '@devraj-labs/vajra-ui-core';
+
+# Separator
+
+A thin line divider. Supports horizontal and vertical orientations, solid / dashed / dotted line styles, custom thickness, and colour.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Box w={220} p={16} bg="#f9fafb" rounded={8}>
+    <Box h={16} bg="#111827" rounded={4} />
+    <Separator color="#E5E7EB" />
+    <Box h={16} bg="#9ca3af" rounded={4} />
+  </Box>
+</ComponentPreview>
+
+```tsx
+import { Separator } from '@devraj-labs/vajra-ui-core';
+
+// Between list items
+<ItemA />
+<Separator color="#E5E7EB" />
+<ItemB />
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Separator } from '@devraj-labs/vajra-ui-core';
+
+// Between list items
+<ItemA />
+<Separator color="#E5E7EB" />
+<ItemB />
+
+// Vertical divider inside a Row
+<Row h={48} align="center">
+  <StatA />
+  <Separator orientation="vertical" color="#E5E7EB" />
+  <StatB />
+</Row>
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Direction of the line |
+| `thickness` | `number` | `1` | Line thickness in pixels |
+| `color` | `string` | `'#000'` | Line colour |
+| `variant` | `'solid' \| 'dashed' \| 'dotted'` | `'solid'` | Line style |
+
+- Horizontal separators stretch to `width: '100%'`
+- Vertical separators stretch to `height: '100%'`, the parent must have an explicit height for this to be visible
+
+## Example
+
+<ExampleImage src="/img/separator-example.png" alt="Separator example" />

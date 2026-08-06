@@ -1,0 +1,65 @@
+---
+id: spacer
+title: Spacer
+sidebar_position: 7
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Spacer, Row, Box } from '@devraj-labs/vajra-ui-core';
+
+# Spacer
+
+A fixed-size empty `View` with no background or styling. Use it to add predictable whitespace between elements without reaching for margin props on every child.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Row align="center" p={16} bg="#f3f4f6" rounded={8}>
+    <Box w={40} h={40} bg="#2563EB" rounded={20} />
+    <Spacer w={16} />
+    <Box w={80} h={16} bg="#9ca3af" rounded={4} />
+  </Row>
+</ComponentPreview>
+
+```tsx
+import { Spacer, Row } from '@devraj-labs/vajra-ui-core';
+
+<Row align="center">
+  <Avatar />
+  <Spacer w={16} />
+  <Name />
+</Row>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Spacer } from '@devraj-labs/vajra-ui-core';
+
+// Vertical gap between sections
+<SectionA />
+<Spacer h={24} />
+<SectionB />
+
+// Horizontal gap inside a Row
+<Row align="center">
+  <Avatar />
+  <Spacer w={12} />
+  <Name />
+</Row>
+```
+
+## API
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `w` | `DimensionValue` | Width of the spacer |
+| `h` | `DimensionValue` | Height of the spacer |
+
+## Example
+
+<ExampleImage src="/img/spacer-example.png" alt="Spacer example" />

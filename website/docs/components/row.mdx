@@ -1,0 +1,53 @@
+---
+id: row
+title: Row
+sidebar_position: 2
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Row } from '@devraj-labs/vajra-ui-core';
+
+# Row
+
+`Box` preset with `direction="row"` applied automatically. Use it whenever you need a horizontal arrangement, icon + label, avatar + name, stat row, tag chips, etc.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Row align="center" gap={12} p={16} bg="#f3f4f6" rounded={8}>
+    <Row w={40} h={40} bg="#2563EB" rounded={20} />
+    <Row w={80} h={16} bg="#d1d5db" rounded={4} />
+  </Row>
+</ComponentPreview>
+
+```tsx
+import { Row } from '@devraj-labs/vajra-ui-core';
+
+<Row align="center" gap={12} p={16} bg="#f3f4f6" rounded={8}>
+  <Avatar />
+  <Name />
+</Row>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Row } from '@devraj-labs/vajra-ui-core';
+
+<Row align="center" gap={12}>
+  <Avatar />
+  <Name />
+</Row>
+```
+
+## API
+
+Accepts all [`Box` props](./box). The `direction` prop is fixed to `"row"` and cannot be overridden.
+
+## Example
+
+<ExampleImage src="/img/row-example.png" alt="Row example" />

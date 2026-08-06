@@ -1,0 +1,68 @@
+---
+id: absolute-center
+title: AbsoluteCenter
+sidebar_position: 6
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { AbsoluteCenter, Box } from '@devraj-labs/vajra-ui-core';
+
+# AbsoluteCenter
+
+Fills its parent absolutely (`top: 0, bottom: 0, left: 0, right: 0`) and centres its children. Use it for loading overlays, modal backdrops, and badge positioning.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Box w={200} h={120} bg="#e5e7eb" rounded={8}>
+    <AbsoluteCenter>
+      <Box w={32} h={32} bg="#2563EB" rounded={16} />
+    </AbsoluteCenter>
+  </Box>
+</ComponentPreview>
+
+```tsx
+import { AbsoluteCenter } from '@devraj-labs/vajra-ui-core';
+
+// Loading overlay
+<Box>
+  {loading && (
+    <AbsoluteCenter>
+      <ActivityIndicator />
+    </AbsoluteCenter>
+  )}
+</Box>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { AbsoluteCenter } from '@devraj-labs/vajra-ui-core';
+
+// Loading overlay
+{loading && (
+  <AbsoluteCenter>
+    <ActivityIndicator />
+  </AbsoluteCenter>
+)}
+```
+
+## API
+
+Accepts all [`Box` props](./box) **except** `style`, the component manages its own absolute-fill style internally.
+
+The following styles are applied automatically and cannot be overridden via props:
+
+```ts
+{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }
+```
+
+> To add a semi-transparent backdrop colour, render a sibling `Box` with `position="absolute"` and the desired background, or nest it inside `AbsoluteCenter` as a child.
+
+## Example
+
+<ExampleImage src="/img/absolute-center-example.png" alt="AbsoluteCenter example" />

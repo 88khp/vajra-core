@@ -1,0 +1,134 @@
+---
+id: box
+title: Box
+sidebar_position: 1
+---
+
+import ComponentPreview from '@site/src/components/ComponentPreview';
+import ExampleImage from '@site/src/components/ExampleImage';
+import PreviewPair from '@site/src/components/PreviewPair';
+import { Box } from '@devraj-labs/vajra-ui-core';
+
+# Box
+
+Foundation component. A `View` wrapper with shorthand style props, covers dimensions, flex, spacing, borders, colours, and position. Every other layout component in the library builds on top of `Box`.
+
+## Preview
+
+<PreviewPair>
+<ComponentPreview>
+  <Box w={220} p={16} bg="#2563EB" rounded={8} direction="row" align="center" gap={8}>
+    <Box w={24} h={24} bg="#ffffff" rounded={12} />
+    <Box w={24} h={24} bg="#ffffff" rounded={12} />
+    <Box w={24} h={24} bg="#ffffff" rounded={12} />
+  </Box>
+</ComponentPreview>
+
+```tsx
+import { Box } from '@devraj-labs/vajra-ui-core';
+
+<Box w={220} p={16} bg="#2563EB" rounded={8} direction="row" align="center" gap={8}>
+  <Box w={24} h={24} bg="#ffffff" rounded={12} />
+  <Box w={24} h={24} bg="#ffffff" rounded={12} />
+  <Box w={24} h={24} bg="#ffffff" rounded={12} />
+</Box>
+```
+</PreviewPair>
+
+## Usage
+
+```tsx
+import { Box } from '@devraj-labs/vajra-ui-core';
+
+<Box w="100%" p={16} bg="#fff" rounded={8} direction="row" align="center" gap={8}>
+  {children}
+</Box>
+```
+
+## API
+
+### Dimensions
+
+| Prop | Type | Maps to |
+|------|------|---------|
+| `w` | `DimensionValue` | `width` |
+| `h` | `DimensionValue` | `height` |
+| `minW` | `DimensionValue` | `minWidth` |
+| `maxW` | `DimensionValue` | `maxWidth` |
+| `minH` | `DimensionValue` | `minHeight` |
+| `maxH` | `DimensionValue` | `maxHeight` |
+
+### Colours
+
+| Prop | Type | Maps to |
+|------|------|---------|
+| `bg` | `string` | `backgroundColor` |
+| `borderColor` | `string` | `borderColor` |
+
+### Borders
+
+| Prop | Type | Maps to |
+|------|------|---------|
+| `borderWidth` | `number` | `borderWidth` |
+| `borderTopWidth` | `number` | `borderTopWidth` |
+| `borderBottomWidth` | `number` | `borderBottomWidth` |
+| `borderLeftWidth` | `number` | `borderLeftWidth` |
+| `borderRightWidth` | `number` | `borderRightWidth` |
+| `rounded` | `number` | `borderRadius` |
+| `roundedT` | `number` | `borderTopLeftRadius` + `borderTopRightRadius` |
+| `roundedB` | `number` | `borderBottomLeftRadius` + `borderBottomRightRadius` |
+| `roundedL` | `number` | `borderTopLeftRadius` + `borderBottomLeftRadius` |
+| `roundedR` | `number` | `borderTopRightRadius` + `borderBottomRightRadius` |
+
+### Flex
+
+| Prop | Type | Maps to |
+|------|------|---------|
+| `flex` | `number` | `flex` |
+| `gap` | `number` | `gap` |
+| `justify` | `FlexStyle['justifyContent']` | `justifyContent` |
+| `align` | `FlexStyle['alignItems']` | `alignItems` |
+| `direction` | `FlexStyle['flexDirection']` | `flexDirection` |
+| `wrap` | `FlexStyle['flexWrap']` | `flexWrap` |
+
+### Spacing
+
+| Prop | Type | Maps to |
+|------|------|---------|
+| `m` | `number` | `margin` |
+| `mx` | `number` | `marginHorizontal` |
+| `my` | `number` | `marginVertical` |
+| `mt` | `number` | `marginTop` |
+| `mb` | `number` | `marginBottom` |
+| `ml` | `number` | `marginLeft` |
+| `mr` | `number` | `marginRight` |
+| `p` | `number` | `padding` |
+| `px` | `number` | `paddingHorizontal` |
+| `py` | `number` | `paddingVertical` |
+| `pt` | `number` | `paddingTop` |
+| `pb` | `number` | `paddingBottom` |
+| `pl` | `number` | `paddingLeft` |
+| `pr` | `number` | `paddingRight` |
+
+### Position
+
+| Prop | Type | Maps to |
+|------|------|---------|
+| `position` | `'absolute' \| 'relative'` | `position` |
+| `top` | `number` | `top` |
+| `bottom` | `number` | `bottom` |
+| `left` | `number` | `left` |
+| `right` | `number` | `right` |
+
+### Other
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `style` | `ViewStyle \| ViewStyle[]` | Merged last, use for props not covered by shorthands (e.g. `overflow`) |
+| `children` | `React.ReactNode` | Child elements |
+
+Also accepts all native `ViewProps`.
+
+## Example
+
+<ExampleImage src="/img/box-example.png" alt="Box example" />

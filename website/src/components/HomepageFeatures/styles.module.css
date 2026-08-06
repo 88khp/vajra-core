@@ -1,0 +1,37 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0 5rem;
+  width: 100%;
+}
+
+.card {
+  height: 100%;
+  padding: 1.75rem;
+  border-radius: 14px;
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-surface-color, var(--ifm-color-emphasis-0));
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(71, 85, 105, 0.16);
+}
+
+.icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.cardTitle {
+  margin-bottom: 0.5rem;
+}
+
+.cardBody {
+  opacity: 0.85;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
