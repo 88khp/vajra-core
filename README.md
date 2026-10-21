@@ -40,7 +40,7 @@
 
 Raw RN layout is verbose. Design systems fix that but ship a theme, a provider, and a dependency tree you didn't ask for.
 
-Vajra UI Core is neither. It's a thin prop layer over the primitives you're already using — `View`, `Text`, `TouchableOpacity`. The whole thing is 9 kB and pulls in nothing. Drop it in, style with your own system, done.
+Vajra UI Core is neither. It's a thin prop layer over the primitives you're already using — `View`, `Text`, `Pressable`. The whole thing is 9 kB and pulls in nothing. Drop it in, style with your own system, done.
 
 ```tsx
 // before
@@ -175,7 +175,7 @@ Headless `TextInput` with the same layout and typography props as `CoreText`.
 
 ### CorePressable
 
-`TouchableOpacity` with full layout prop support. Style your buttons without a wrapper `View`.
+`Pressable` with full layout prop support. Style your buttons without a wrapper `View`.
 
 <img src="./docs/core-pressable/core-pressable-example.png" height="500" />
 

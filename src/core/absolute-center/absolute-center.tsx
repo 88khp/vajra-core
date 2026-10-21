@@ -1,17 +1,21 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Box } from '../box';
 import { TAbsoluteCenterProps } from './absolute-center-types';
 
-export const AbsoluteCenter = memo<TAbsoluteCenterProps>(({ children, ...rest }) => (
+// Passed as Box props rather than an inline style object, so the fill and the
+// centering resolve to one cached style.
+export const AbsoluteCenter = (props: TAbsoluteCenterProps) => (
   <Box
-    style={{ bottom: 0, left: 0, position: 'absolute', right: 0, top: 0 }}
+    position="absolute"
+    top={0}
+    bottom={0}
+    left={0}
+    right={0}
     align="center"
     justify="center"
-    {...rest}
-  >
-    {children}
-  </Box>
-));
+    {...props}
+  />
+);
 
 AbsoluteCenter.displayName = 'AbsoluteCenter';

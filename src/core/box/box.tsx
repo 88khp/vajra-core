@@ -1,116 +1,15 @@
-import React, { memo } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import { View, ViewProps, ViewStyle } from 'react-native';
 
-import { buildBoxStyle } from './build-box-style';
+import { BOX_STYLE_SPEC, composeStyle, splitStyleProps } from '../../style';
 import { TBoxProps } from './box-types';
 
-export const Box = memo(
-  ({
-    style,
-    children,
-    w,
-    h,
-    minW,
-    maxW,
-    minH,
-    maxH,
-    bg,
-    borderColor,
-    borderWidth,
-    borderTopWidth,
-    borderBottomWidth,
-    borderLeftWidth,
-    borderRightWidth,
-    rounded,
-    roundedT,
-    roundedB,
-    roundedL,
-    roundedR,
-    align,
-    justify,
-    gap,
-    flex,
-    direction,
-    wrap,
-    m,
-    mx,
-    my,
-    mt,
-    mb,
-    ml,
-    mr,
-    p,
-    px,
-    py,
-    pt,
-    pb,
-    pl,
-    pr,
-    position,
-    top,
-    bottom,
-    left,
-    right,
-    overflow,
-    ...rest
-  }: TBoxProps) => {
-    return (
-      <View
-        style={[
-          buildBoxStyle({
-            w,
-            h,
-            minW,
-            maxW,
-            minH,
-            maxH,
-            bg,
-            borderColor,
-            borderWidth,
-            borderTopWidth,
-            borderBottomWidth,
-            borderLeftWidth,
-            borderRightWidth,
-            rounded,
-            roundedT,
-            roundedB,
-            roundedL,
-            roundedR,
-            align,
-            justify,
-            gap,
-            flex,
-            direction,
-            wrap,
-            m,
-            mx,
-            my,
-            mt,
-            mb,
-            ml,
-            mr,
-            p,
-            px,
-            py,
-            pt,
-            pb,
-            pl,
-            pr,
-            position,
-            top,
-            bottom,
-            left,
-            right,
-            overflow,
-          }),
-          style,
-        ]}
-        {...rest}
-      >
-        {children}
-      </View>
-    );
-  },
-);
+// Not memoized: Box takes children, which are new elements on every parent
+// render, so a props comparison would never skip a render.
+export const Box = (props: TBoxProps) => {
+  const [boxStyle, rest] = splitStyleProps<ViewProps, ViewStyle>(props, BOX_STYLE_SPEC);
+
+  return <View {...rest} style={composeStyle(boxStyle, props.style)} />;
+};
 
 Box.displayName = 'Box';

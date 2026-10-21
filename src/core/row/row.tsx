@@ -1,9 +1,9 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Box } from '../box';
 import { TRowProps } from './row-types';
 
-const Row = memo<TRowProps>(props => <Box direction="row" {...props} />);
+const Row = (props: TRowProps) => <Box direction="row" {...props} />;
 
 Row.displayName = 'Row';
 

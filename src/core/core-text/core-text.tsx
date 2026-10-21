@@ -1,73 +1,14 @@
 import React, { memo } from 'react';
-import { Text as RNText } from 'react-native';
+import { Text as RNText, TextProps, TextStyle } from 'react-native';
 
+import { composeStyle, splitStyleProps, TEXT_STYLE_SPEC } from '../../style';
 import { TTextProps } from './core-text-types';
 
-export const CoreText = memo(
-  ({
-    style,
-    children,
-    fontSize,
-    lineHeight,
-    fontWeight,
-    fontFamily,
-    letterSpacing,
-    color,
-    align,
-    decoration,
-    transform,
-    flex,
-    m,
-    mx,
-    my,
-    mt,
-    mb,
-    ml,
-    mr,
-    p,
-    px,
-    py,
-    pt,
-    pb,
-    pl,
-    pr,
-    ...rest
-  }: TTextProps) => (
-    <RNText
-      style={[
-        {
-          fontSize,
-          lineHeight,
-          fontWeight,
-          fontFamily,
-          letterSpacing,
-          color,
-          textAlign: align,
-          textDecorationLine: decoration,
-          textTransform: transform,
-          flex,
-          margin: m,
-          marginHorizontal: mx,
-          marginVertical: my,
-          marginTop: mt,
-          marginBottom: mb,
-          marginLeft: ml,
-          marginRight: mr,
-          padding: p,
-          paddingHorizontal: px,
-          paddingVertical: py,
-          paddingTop: pt,
-          paddingBottom: pb,
-          paddingLeft: pl,
-          paddingRight: pr,
-        },
-        style,
-      ]}
-      {...rest}
-    >
-      {children}
-    </RNText>
-  ),
-);
+// Memoized because text children are usually strings, which compare equal.
+export const CoreText = memo((props: TTextProps) => {
+  const [textStyle, rest] = splitStyleProps<TextProps, TextStyle>(props, TEXT_STYLE_SPEC);
+
+  return <RNText {...rest} style={composeStyle(textStyle, props.style)} />;
+});
 
 CoreText.displayName = 'CoreText';

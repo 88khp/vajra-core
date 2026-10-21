@@ -1,6 +1,14 @@
 import React, { memo } from 'react';
+import { ViewStyle } from 'react-native';
+
 import { Box } from '../box';
-import { TSeparatorProps } from './separator-types';
+import { TSeparatorProps, TSeparatorVariant } from './separator-types';
+
+const BORDER_STYLES: Record<TSeparatorVariant, ViewStyle> = {
+  solid: { borderStyle: 'solid' },
+  dashed: { borderStyle: 'dashed' },
+  dotted: { borderStyle: 'dotted' },
+};
 
 const SeparatorComponent: React.FC<TSeparatorProps> = ({
   orientation = 'horizontal',
@@ -17,7 +25,7 @@ const SeparatorComponent: React.FC<TSeparatorProps> = ({
       borderColor={color}
       borderBottomWidth={isHorizontal ? thickness : 0}
       borderLeftWidth={isHorizontal ? 0 : thickness}
-      style={{ borderStyle: variant }}
+      style={BORDER_STYLES[variant]}
     />
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { Text as RNText, TouchableOpacity } from 'react-native';
+import { Text as RNText } from 'react-native';
 
 import { CorePressable } from './pressable';
 
@@ -63,14 +63,52 @@ describe('CorePressable', () => {
     expect(style.opacity).toBe(0.5);
   });
 
-  it('passes activeOpacity through to the underlying TouchableOpacity', () => {
-    const { UNSAFE_getByType } = render(
-      <CorePressable activeOpacity={0.2}>
+  it('drops to activeOpacity while pressed', () => {
+    render(
+      <CorePressable testID="pressable" activeOpacity={0.4} testOnly_pressed>
         <RNText>content</RNText>
       </CorePressable>,
     );
 
-    expect(UNSAFE_getByType(TouchableOpacity).props.activeOpacity).toBe(0.2);
+    const style = flattenStyle(screen.getByTestId('pressable').props.style);
+
+    expect(style.opacity).toBe(0.4);
+  });
+
+  it('defaults activeOpacity to 0.2', () => {
+    render(
+      <CorePressable testID="pressable" testOnly_pressed>
+        <RNText>content</RNText>
+      </CorePressable>,
+    );
+
+    const style = flattenStyle(screen.getByTestId('pressable').props.style);
+
+    expect(style.opacity).toBe(0.2);
+  });
+
+  it('keeps its opacity while pressed when activeOpacity is 1', () => {
+    render(
+      <CorePressable testID="pressable" activeOpacity={1} opacity={0.5} testOnly_pressed>
+        <RNText>content</RNText>
+      </CorePressable>,
+    );
+
+    const style = flattenStyle(screen.getByTestId('pressable').props.style);
+
+    expect(style.opacity).toBe(0.5);
+  });
+
+  it('is not dimmed when not pressed', () => {
+    render(
+      <CorePressable testID="pressable">
+        <RNText>content</RNText>
+      </CorePressable>,
+    );
+
+    const style = flattenStyle(screen.getByTestId('pressable').props.style);
+
+    expect(style.opacity).toBeUndefined();
   });
 
   it('resolves Box-style props (bg, rounded)', () => {
