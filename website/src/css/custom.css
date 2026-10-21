@@ -1,7 +1,7 @@
 /**
  * Vajra UI Core theme — a neutral slate palette, since this package is
  * headless and ships no color tokens of its own. The styled sibling,
- * @devraj-labs/vajra-ui, owns the teal/crimson brand identity.
+ * @88khp/vajra-ui, owns the teal/crimson brand identity.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');

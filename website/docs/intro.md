@@ -15,6 +15,6 @@ Headless, zero-dependency React Native layout and primitive components. No themi
 - **Typography & input**: `CoreText` and `CoreTextInput` bring the same shorthand props to text and form fields.
 - **Responsive utilities**: `useDimensions` for screen-aware widths without a context provider.
 
-Want pre-styled, token-driven components built on top of these primitives? See the styled sibling package, [`@devraj-labs/vajra-ui`](https://www.npmjs.com/package/@devraj-labs/vajra-ui).
+Want pre-styled, token-driven components built on top of these primitives? See the styled sibling package, [`@88khp/vajra-ui`](https://www.npmjs.com/package/@88khp/vajra-ui).
 
 See [Installation](./installation) to get started, or browse the [primitives](./components/box) directly.

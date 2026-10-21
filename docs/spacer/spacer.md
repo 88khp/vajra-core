@@ -15,7 +15,7 @@ A fixed-size empty `View` with no background or styling. Use it to add predictab
 ## Usage
 
 ```tsx
-import { Spacer } from '@devraj-labs/vajra-ui-core';
+import { Spacer } from '@88khp/vajra-ui-core';
 
 // Vertical gap between sections
 <SectionA />

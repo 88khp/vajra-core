@@ -15,13 +15,13 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://devraj-labs.github.io',
+  url: 'https://88khp.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/vajra-ui-core/',
 
   // GitHub pages deployment config.
-  organizationName: 'devraj-labs',
+  organizationName: '88khp',
   projectName: 'vajra-ui-core',
 
   onBrokenLinks: 'throw',
@@ -42,7 +42,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/devraj-labs/vajra-ui-core/tree/main/website/',
+          editUrl: 'https://github.com/88khp/vajra-ui-core/tree/main/website/',
         },
         blog: false,
         theme: {
@@ -70,12 +70,12 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/devraj-labs/vajra-ui-core',
+          href: 'https://github.com/88khp/vajra-ui-core',
           label: 'GitHub',
           position: 'right',
         },
         {
-          href: 'https://www.npmjs.com/package/@devraj-labs/vajra-ui-core',
+          href: 'https://www.npmjs.com/package/@88khp/vajra-ui-core',
           label: 'npm',
           position: 'right',
         },
@@ -102,15 +102,15 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/devraj-labs/vajra-ui-core',
+              href: 'https://github.com/88khp/vajra-ui-core',
             },
             {
               label: 'npm',
-              href: 'https://www.npmjs.com/package/@devraj-labs/vajra-ui-core',
+              href: 'https://www.npmjs.com/package/@88khp/vajra-ui-core',
             },
             {
               label: 'Changelog',
-              href: 'https://github.com/devraj-labs/vajra-ui-core/blob/main/CHANGELOG.md',
+              href: 'https://github.com/88khp/vajra-ui-core/blob/main/CHANGELOG.md',
             },
           ],
         },
@@ -119,7 +119,7 @@ const config: Config = {
           items: [
             {
               label: 'Vajra UI (styled)',
-              href: 'https://www.npmjs.com/package/@devraj-labs/vajra-ui',
+              href: 'https://www.npmjs.com/package/@88khp/vajra-ui',
             },
           ],
         },

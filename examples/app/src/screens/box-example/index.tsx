@@ -7,7 +7,7 @@ import {
   CoreText,
   CorePressable,
   Separator,
-} from '@devraj-labs/vajra-ui-core';
+} from '@88khp/vajra-ui-core';
 import { colors } from '../../colors';
 import { STATS, ACTIVITY, QUICK_ACTIONS, SALES_BY_CATEGORY } from './data';
 

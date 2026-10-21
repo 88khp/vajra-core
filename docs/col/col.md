@@ -15,7 +15,7 @@
 ## Usage
 
 ```tsx
-import { Col } from '@devraj-labs/vajra-ui-core';
+import { Col } from '@88khp/vajra-ui-core';
 
 <Col gap={8} p={16}>
   <Title />

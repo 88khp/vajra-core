@@ -15,7 +15,7 @@ Foundation component. A `View` wrapper with shorthand style props — covers dim
 ## Usage
 
 ```tsx
-import { Box } from '@devraj-labs/vajra-ui-core';
+import { Box } from '@88khp/vajra-ui-core';
 
 <Box w="100%" p={16} bg="#fff" rounded={8} direction="row" align="center" gap={8}>
   {children}

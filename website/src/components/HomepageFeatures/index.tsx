@@ -67,7 +67,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Want tokens, themes, and pre-styled components on top? Reach for the
-        styled sibling, <code>@devraj-labs/vajra-ui</code>.
+        styled sibling, <code>@88khp/vajra-ui</code>.
       </>
     ),
   },

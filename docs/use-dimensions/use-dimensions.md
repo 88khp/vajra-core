@@ -15,7 +15,7 @@ Screen-aware dimension utilities. Pass a `screenPadding` value to get a `content
 ## Usage
 
 ```tsx
-import { useDimensions } from '@devraj-labs/vajra-ui-core';
+import { useDimensions } from '@88khp/vajra-ui-core';
 
 const { width, contentWidth, getItemWidth } = useDimensions(16);
 

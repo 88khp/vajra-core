@@ -7,7 +7,7 @@ import {
   CoreText,
   CorePressable,
   Separator,
-} from '@devraj-labs/vajra-ui-core';
+} from '@88khp/vajra-ui-core';
 import { colors } from '../../colors';
 import { TOGGLE_SETTINGS, NAV_SECTIONS } from './data';
 

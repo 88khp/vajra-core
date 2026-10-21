@@ -1,5 +1,5 @@
 {
-  "name": "@devraj-labs/vajra-ui-core",
+  "name": "@88khp/vajra-ui-core",
   "version": "3.0.0-alpha.0",
   "description": "Headless, zero-dependency React Native layout and primitive components",
   "main": "dist/index.js",
@@ -38,9 +38,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devraj-labs/vajra-ui-core.git"
+    "url": "https://github.com/88khp/vajra-ui-core.git"
   },
-  "homepage": "https://github.com/devraj-labs/vajra-ui-core#readme",
+  "homepage": "https://github.com/88khp/vajra-ui-core#readme",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=18.0.0",

@@ -15,7 +15,7 @@ A thin line divider. Supports horizontal and vertical orientations, solid / dash
 ## Usage
 
 ```tsx
-import { Separator } from '@devraj-labs/vajra-ui-core';
+import { Separator } from '@88khp/vajra-ui-core';
 
 // Between list items
 <ItemA />

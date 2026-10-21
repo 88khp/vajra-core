@@ -17,7 +17,7 @@ Supports `ref` forwarding.
 ## Usage
 
 ```tsx
-import { CoreTextInput } from '@devraj-labs/vajra-ui-core';
+import { CoreTextInput } from '@88khp/vajra-ui-core';
 
 <CoreTextInput
   p={12}

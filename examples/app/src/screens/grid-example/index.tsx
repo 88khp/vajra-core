@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 import {
   Box, Col, Row, CoreText, CorePressable, Grid, Separator,
-} from '@devraj-labs/vajra-ui-core';
+} from '@88khp/vajra-ui-core';
 import { colors } from '../../colors';
 import { SCREEN_PADDING, GAP, CATEGORIES, FEATURED_APPS, APP_GRID } from './data';
 

@@ -15,7 +15,7 @@ Compound component (`Grid.Root` + `Grid.Item`) for responsive grid layouts. `Gri
 ## Usage
 
 ```tsx
-import { Grid } from '@devraj-labs/vajra-ui-core';
+import { Grid } from '@88khp/vajra-ui-core';
 
 const PADDING = 16;
 const GAP = 12;

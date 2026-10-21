@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Breaking
 
+- The package is renamed from `@devraj-labs/vajra-ui-core` to `@88khp/vajra-ui-core`. Update the dependency and every import. The repository and docs site moved to `github.com/88khp/vajra-ui-core` and `88khp.github.io/vajra-ui-core`.
 - `CorePressable` is built on React Native `Pressable` instead of `TouchableOpacity`. Its props are now based on `PressableProps`, so `TouchableOpacity`-only props such as `delayPressIn` are no longer accepted. Press feedback is an instant opacity change to `activeOpacity` (default `0.2`, pass `1` to turn it off) instead of a fade.
 - `AbsoluteCenter` builds its fill from Box props, so passing `top`, `left`, `right`, `bottom` or `position` now overrides the fill.
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView, ActivityIndicator } from 'react-native';
 import {
   Box, AbsoluteCenter, Col, Row, CoreText, CorePressable, Separator,
-} from '@devraj-labs/vajra-ui-core';
+} from '@88khp/vajra-ui-core';
 import { colors } from '../../colors';
 import { TRACKS } from './data';
 

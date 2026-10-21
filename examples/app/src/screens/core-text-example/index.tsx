@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
-import { Box, Row, Col, CoreText, CorePressable, Separator } from '@devraj-labs/vajra-ui-core';
+import { Box, Row, Col, CoreText, CorePressable, Separator } from '@88khp/vajra-ui-core';
 import { colors } from '../../colors';
 import { CATEGORIES, ARTICLES, TYPE_SCALE, SEMANTIC_COLORS } from './data';
 

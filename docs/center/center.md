@@ -15,7 +15,7 @@
 ## Usage
 
 ```tsx
-import { Center } from '@devraj-labs/vajra-ui-core';
+import { Center } from '@88khp/vajra-ui-core';
 
 <Center flex={1}>
   <Spinner />

@@ -9,7 +9,7 @@ import {
   CoreText,
   CorePressable,
   Separator,
-} from '@devraj-labs/vajra-ui-core';
+} from '@88khp/vajra-ui-core';
 
 import { RootStackParamList } from '../navigator';
 import { colors } from '../colors';
