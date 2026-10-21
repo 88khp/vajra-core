@@ -88,6 +88,13 @@ export type TStyleSpec = {
   // Style every element of this kind starts from, e.g. TextInput's outline reset.
   base?: Readonly<Record<string, unknown>>;
   /**
+   * Props the component reads itself, e.g. Pressable's `activeOpacity`. They are
+   * left out of both the style and the forwarded props, so a component can read
+   * `props.x` instead of `const { x, ...rest } = props`, which bundlers compile to
+   * a helper that searches the excluded keys for every prop on every render.
+   */
+  omit?: ReadonlySet<string>;
+  /**
    * @deprecated Unused since 3.0.0-alpha.1: styles are cached per spec, so the
    * base no longer needs to be part of a cache key. Kept so existing specs
    * still type-check.
@@ -98,21 +105,29 @@ export type TStyleSpec = {
 const createStyleSpec = (
   keys: Record<string, string>,
   base?: Record<string, unknown>,
+  omit?: readonly string[],
 ): TStyleSpec => ({
   keys: new Map(Object.entries(keys)),
   base,
+  omit: omit ? new Set(omit) : undefined,
 });
 
 export const BOX_STYLE_SPEC = createStyleSpec(BOX_KEYS);
 
-export const PRESSABLE_STYLE_SPEC = createStyleSpec({ ...BOX_KEYS, opacity: 'opacity' });
+export const PRESSABLE_STYLE_SPEC = createStyleSpec(
+  { ...BOX_KEYS, opacity: 'opacity' },
+  undefined,
+  ['activeOpacity'],
+);
 
 export const TEXT_STYLE_SPEC = createStyleSpec(TEXT_KEYS);
 
 // react-native-web renders TextInput as a real DOM <input>, which gets a
 // browser-default focus outline (usually blue) with no native-platform
 // equivalent to preserve, so suppress it by default.
-export const TEXT_INPUT_STYLE_SPEC = createStyleSpec(TEXT_INPUT_KEYS, { outlineWidth: 0 });
+export const TEXT_INPUT_STYLE_SPEC = createStyleSpec(TEXT_INPUT_KEYS, { outlineWidth: 0 }, [
+  'placeholderColor',
+]);
 
 /**
  * Maps a style prop's passed value to the value that goes in the style, e.g. a
@@ -278,7 +293,8 @@ const buildStyle = (
 /**
  * Splits component props into a style object and the props to forward. Only
  * props that were passed with a defined value end up in the style. `style`
- * itself is left out of both; the caller merges it with `composeStyle`.
+ * itself and the spec's `omit` props are left out of both; the caller merges
+ * `style` with `composeStyle`.
  *
  * `resolve`, when given, maps each style prop's value before it goes in the
  * style (e.g. theme tokens to values). The style object is only built, and
@@ -292,6 +308,7 @@ export const splitStyleProps = <TRest extends object, TStyle extends object = ob
   resolve?: TStyleResolver,
 ): [TStyle | undefined, TRest] => {
   const rest: Record<string, unknown> = {};
+  const { omit } = spec;
   const cache = getStyleCache(spec, resolve);
   let node: TStyleNode | undefined = cache.root;
   let hasStyle = false;
@@ -302,7 +319,7 @@ export const splitStyleProps = <TRest extends object, TStyle extends object = ob
     const styleKey = spec.keys.get(prop);
 
     if (styleKey === undefined) {
-      if (prop !== 'style') rest[prop] = value;
+      if (prop !== 'style' && (omit === undefined || !omit.has(prop))) rest[prop] = value;
       continue;
     }
 

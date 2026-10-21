@@ -3,6 +3,7 @@ import { ViewStyle } from 'react-native';
 import {
   BOX_STYLE_SPEC,
   composeStyle,
+  PRESSABLE_STYLE_SPEC,
   splitStyleProps,
   TEXT_INPUT_STYLE_SPEC,
   TEXT_STYLE_SPEC,
@@ -74,6 +75,16 @@ describe('splitStyleProps', () => {
       borderTopRightRadius: 4,
       borderBottomLeftRadius: 8,
     });
+  });
+
+  it("leaves the spec's omit props out of both the style and the forwarded props", () => {
+    const [style, rest] = splitStyleProps(
+      { activeOpacity: 0.5, p: 4, testID: 'button' },
+      PRESSABLE_STYLE_SPEC,
+    );
+
+    expect(style).toEqual({ padding: 4 });
+    expect(rest).toEqual({ testID: 'button' });
   });
 
   it('keeps a style apart from a longer one that starts with the same props', () => {
