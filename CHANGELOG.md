@@ -2,17 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-## [3.0.0-alpha.1] - 2026-10-21
+## [3.0.0-alpha.1] - 2026-10-22
 
 ### Added
 
 - `splitStyleProps` takes an optional third argument, a `TStyleResolver` `(prop, value) => value`, that maps each style prop's value before it goes in the style (e.g. theme token names to theme values). Styles are cached per resolver and keyed by the values as passed, so a cache hit skips resolving. Create one resolver per theme, not one per render.
+- `TStyleSpec` takes an optional `omit` set: props the component reads itself, left out of both the style and the forwarded props by `splitStyleProps`. `PRESSABLE_STYLE_SPEC` omits `activeOpacity` and `TEXT_INPUT_STYLE_SPEC` omits `placeholderColor`.
 - `getPressableStyle(style, activeOpacity)` returns a Pressable `style` prop with opacity press feedback. The callback is shared per style object, so a Pressable with an unchanged style gets the same `style` prop on every render. `DEFAULT_ACTIVE_OPACITY` is exported.
+
+### Deprecated
+
+- `TStyleSpec.cachePrefix` is optional and unused. Styles are cached per spec, so the spec's `base` no longer needs to be part of a cache key.
 
 ### Performance
 
+- `splitStyleProps` caches built styles in a tree keyed by style key and passed value, per spec (and per resolver), instead of building a string key for every call.
 - `splitStyleProps` builds the style object only on a cache miss. Before, every call filled a new style object (and copied the spec `base`, e.g. `TextInput`'s outline reset) even when the cached one was returned.
 - `CorePressable` no longer creates a new `style` callback on every render.
+- `CorePressable` and `CoreTextInput` read `activeOpacity` and `placeholderColor` from props instead of splitting them off with rest destructuring. Bundlers compile `const { a, ...rest } = props` into a helper (`__rest`, or Babel's `objectWithoutProperties`, which React Native's Babel preset always applies) that searches the excluded keys for every prop on every render.
+- The build targets ES2018 instead of ES2017, so object spread is emitted as native spread instead of `Object.assign`.
 
 ### Tooling
 
