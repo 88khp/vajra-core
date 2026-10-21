@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import { Text as RNText } from 'react-native';
 
-import { CorePressable } from './pressable';
+import { CorePressable, getPressableStyle } from './pressable';
 
 const flattenStyle = (style: unknown): Record<string, unknown> => {
   if (Array.isArray(style)) {
@@ -122,5 +122,36 @@ describe('CorePressable', () => {
 
     expect(style.backgroundColor).toBe('#0000ff');
     expect(style.borderRadius).toBe(6);
+  });
+});
+
+describe('getPressableStyle', () => {
+  it('returns one callback per style object and opacity', () => {
+    const style = { padding: 4 };
+
+    expect(getPressableStyle(style, 0.5)).toBe(getPressableStyle(style, 0.5));
+    expect(getPressableStyle(style, 0.5)).not.toBe(getPressableStyle(style, 0.3));
+    expect(getPressableStyle(undefined, 0.5)).toBe(getPressableStyle(undefined, 0.5));
+  });
+
+  it('applies the pressed opacity only while pressed', () => {
+    const style = { padding: 4 };
+    const callback = getPressableStyle(style, 0.5) as (state: { pressed: boolean }) => unknown;
+
+    expect(callback({ pressed: false })).toBe(style);
+    expect(flattenStyle(callback({ pressed: true }))).toEqual({ padding: 4, opacity: 0.5 });
+  });
+
+  it('returns the style itself when activeOpacity is 1', () => {
+    const style = { padding: 4 };
+
+    expect(getPressableStyle(style, 1)).toBe(style);
+  });
+
+  it('keeps an array style as passed', () => {
+    const style = [{ padding: 4 }, { margin: 2 }];
+    const callback = getPressableStyle(style, 0.5) as (state: { pressed: boolean }) => unknown;
+
+    expect(callback({ pressed: false })).toBe(style);
   });
 });
