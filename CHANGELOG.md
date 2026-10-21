@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2026-10-22
+
+The stable 3.0 release, with every change from 3.0.0-alpha.0 and 3.0.0-alpha.1. The runtime code is the same as 3.0.0-alpha.1: every built file is byte-identical to the 3.0.0-alpha.1 package on npm.
+
+### Fixed
+
+- The package no longer ships compiled tests. `tsconfig.build.json` excludes `*.test.ts` and `*.test.tsx`, and `build` clears `dist` first, so files from earlier builds are not published either. 3.0.0-alpha.1 shipped 28 test files.
+
 ## [3.0.0-alpha.1] - 2026-10-22
 
 ### Added

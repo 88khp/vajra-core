@@ -1,6 +1,6 @@
 {
   "name": "@88khp/vajra-ui-core",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0",
   "description": "Headless, zero-dependency React Native layout and primitive components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
