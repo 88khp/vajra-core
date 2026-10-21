@@ -80,16 +80,16 @@ export const getPressableStyle = (
 // opacity change while pressed, without the fade animation.
 //
 // Not memoized: it takes children, so a props comparison would never skip a render.
-export const CorePressable = ({
-  activeOpacity = DEFAULT_ACTIVE_OPACITY,
-  ...props
-}: TCorePressableProps) => {
+//
+// activeOpacity is read from props and left out by the spec's `omit`, rather than
+// split off with rest destructuring.
+export const CorePressable = (props: TCorePressableProps) => {
   const [boxStyle, rest] = splitStyleProps<PressableProps, ViewStyle>(props, PRESSABLE_STYLE_SPEC);
 
   return (
     <Pressable
       {...rest}
-      style={getPressableStyle(composeStyle(boxStyle, props.style), activeOpacity)}
+      style={getPressableStyle(composeStyle(boxStyle, props.style), props.activeOpacity)}
     />
   );
 };

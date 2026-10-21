@@ -5,7 +5,8 @@ import { composeStyle, splitStyleProps, TEXT_INPUT_STYLE_SPEC } from '../../styl
 import { TCoreTextInputProps } from './core-text-input-types';
 
 const CoreTextInputComponent = forwardRef<TextInput, TCoreTextInputProps>(
-  ({ placeholderColor, ...props }, ref) => {
+  // placeholderColor is read from props and left out by the spec's `omit`.
+  (props, ref) => {
     const [inputStyle, rest] = splitStyleProps<TextInputProps, TextStyle>(
       props,
       TEXT_INPUT_STYLE_SPEC,
@@ -14,7 +15,7 @@ const CoreTextInputComponent = forwardRef<TextInput, TCoreTextInputProps>(
     return (
       <TextInput
         ref={ref}
-        placeholderTextColor={placeholderColor}
+        placeholderTextColor={props.placeholderColor}
         {...rest}
         style={composeStyle(inputStyle, props.style)}
       />
