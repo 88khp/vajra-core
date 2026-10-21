@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0-alpha.1] - 2026-10-21
+
+### Added
+
+- `splitStyleProps` takes an optional third argument, a `TStyleResolver` `(prop, value) => value`, that maps each style prop's value before it goes in the style (e.g. theme token names to theme values). Styles are cached per resolver and keyed by the values as passed, so a cache hit skips resolving. Create one resolver per theme, not one per render.
+- `getPressableStyle(style, activeOpacity)` returns a Pressable `style` prop with opacity press feedback. The callback is shared per style object, so a Pressable with an unchanged style gets the same `style` prop on every render. `DEFAULT_ACTIVE_OPACITY` is exported.
+
+### Performance
+
+- `splitStyleProps` builds the style object only on a cache miss. Before, every call filled a new style object (and copied the spec `base`, e.g. `TextInput`'s outline reset) even when the cached one was returned.
+- `CorePressable` no longer creates a new `style` callback on every render.
+
+### Tooling
+
+- `release:alpha` script publishes under the `alpha` dist-tag.
+
 ## [3.0.0-alpha.0] - 2026-10-21
 
 ### Breaking
