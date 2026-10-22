@@ -36,6 +36,30 @@
 
 ---
 
+## Is it for you?
+
+### Why use it
+
+- You want less boilerplate for layout in React Native, with no theme or provider to set up.
+- You already have your own styling system and want layout primitives that fit into it.
+
+### The problem it solves
+
+Raw React Native layout is verbose: every `View` needs a `style` object with flex direction, alignment, padding and gap. Design systems fix that, but they bring a theme, a provider and a dependency tree. This package is only the layout layer, and it has zero dependencies.
+
+### Who it's not for
+
+- Teams that want ready-made components such as buttons, inputs or modals. Use [`@88khp/vajra-ui`](https://github.com/88khp/vajra-ui).
+- Web projects. It is a React Native package.
+
+### What it doesn't do
+
+- It doesn't style anything beyond layout. There are no colors, fonts or themes.
+- It doesn't provide components beyond the 12 layout and text primitives.
+- It doesn't need a provider, so there is nothing to wrap your app in.
+
+---
+
 ## Why
 
 Raw RN layout is verbose. Design systems fix that but ship a theme, a provider, and a dependency tree you didn't ask for.
