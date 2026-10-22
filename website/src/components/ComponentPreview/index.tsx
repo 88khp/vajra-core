@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import styles from './styles.module.css';
 
-// vajra-ui-core is headless (no theme provider, no design tokens) — primitives
+// vajra-core is headless (no theme provider, no design tokens) — primitives
 // take raw style props directly (bg="#2563EB", p={16}, etc.), so the only
 // context this preview needs to supply is SafeAreaProvider, which some
 // primitives may rely on transitively via react-native-safe-area-context.

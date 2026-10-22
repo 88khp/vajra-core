@@ -9,7 +9,7 @@ sidebar_position: 2
 ## Install
 
 ```sh
-npm install @88khp/vajra-ui-core
+npm install @88khp/vajra-core
 ```
 
 ### Peer dependencies
@@ -26,7 +26,7 @@ npm install react react-native
 ## Quick start
 
 ```tsx
-import { Box, Row, CoreText, CorePressable } from '@88khp/vajra-ui-core';
+import { Box, Row, CoreText, CorePressable } from '@88khp/vajra-core';
 
 export default function App() {
   return (
@@ -46,6 +46,6 @@ export default function App() {
 }
 ```
 
-There is no provider to wrap your app in, `vajra-ui-core` has no theme or context to set up. Import a primitive and start passing style props.
+There is no provider to wrap your app in, `vajra-core` has no theme or context to set up. Import a primitive and start passing style props.
 
 Looking for tokens, themes, and pre-styled components? See [`@88khp/vajra-ui`](https://www.npmjs.com/package/@88khp/vajra-ui), which builds on top of these primitives.

@@ -75,7 +75,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://www.npmjs.com/package/@88khp/vajra-ui-core',
+          href: 'https://www.npmjs.com/package/@88khp/vajra-core',
           label: 'npm',
           position: 'right',
         },
@@ -106,7 +106,7 @@ const config: Config = {
             },
             {
               label: 'npm',
-              href: 'https://www.npmjs.com/package/@88khp/vajra-ui-core',
+              href: 'https://www.npmjs.com/package/@88khp/vajra-core',
             },
             {
               label: 'Changelog',
@@ -124,7 +124,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Devraj Labs. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} 88khp. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -9,7 +9,7 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
-const sample = `import { Box, Row, CoreText, CorePressable } from '@88khp/vajra-ui-core';
+const sample = `import { Box, Row, CoreText, CorePressable } from '@88khp/vajra-core';
 
 <Box p={16} bg="#fff" rounded={8} gap={8}>
   <Row align="center" gap={8}>

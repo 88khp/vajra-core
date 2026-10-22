@@ -7,7 +7,7 @@ sidebar_position: 1
 import ComponentPreview from '@site/src/components/ComponentPreview';
 import ExampleImage from '@site/src/components/ExampleImage';
 import PreviewPair from '@site/src/components/PreviewPair';
-import { useDimensions, Col, CoreText } from '@88khp/vajra-ui-core';
+import { useDimensions, Col, CoreText } from '@88khp/vajra-core';
 
 # useDimensions
 
@@ -33,7 +33,7 @@ export const DimensionsDemo = () => {
 </ComponentPreview>
 
 ```tsx
-import { useDimensions } from '@88khp/vajra-ui-core';
+import { useDimensions } from '@88khp/vajra-core';
 
 const { width, contentWidth, getItemWidth } = useDimensions(16);
 
@@ -45,7 +45,7 @@ const colWidth = getItemWidth(3, 8);
 ## Usage
 
 ```tsx
-import { useDimensions } from '@88khp/vajra-ui-core';
+import { useDimensions } from '@88khp/vajra-core';
 
 const { width, contentWidth, getItemWidth } = useDimensions(16);
 
