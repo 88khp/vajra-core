@@ -8,7 +8,7 @@ import {
   CorePressable,
   Separator,
   Spacer,
-} from '@88khp/vajra-ui-core';
+} from '@88khp/vajra-core';
 import { colors } from '../../colors';
 import { POSTS, SKILLS } from './data';
 

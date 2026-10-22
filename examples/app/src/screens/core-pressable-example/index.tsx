@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView, Alert } from 'react-native';
 import {
   Box, Row, Col, CoreText, CorePressable, Separator,
-} from '@88khp/vajra-ui-core';
+} from '@88khp/vajra-core';
 import { colors } from '../../colors';
 import { SIZES, COLOR_OPTIONS, REVIEWS } from './data';
 

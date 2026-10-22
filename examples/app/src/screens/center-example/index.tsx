@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, ActivityIndicator, useWindowDimensions } from 'react-native';
-import { Box, Center, Col, Row, CoreText, CorePressable } from '@88khp/vajra-ui-core';
+import { Box, Center, Col, Row, CoreText, CorePressable } from '@88khp/vajra-core';
 import { colors } from '../../colors';
 import { ONBOARDING_STEPS } from './data';
 

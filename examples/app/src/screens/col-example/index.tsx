@@ -7,7 +7,7 @@ import {
   CoreText,
   CorePressable,
   Separator,
-} from '@88khp/vajra-ui-core';
+} from '@88khp/vajra-core';
 import { colors } from '../../colors';
 import { TOGGLE_SETTINGS, NAV_SECTIONS } from './data';
 
@@ -210,7 +210,7 @@ export function ColExample() {
             Vajra UI Core · v2.0.1
           </CoreText>
           <CoreText fontSize={11} color={colors.textDisabled}>
-            © 2026 Devraj Labs
+            © 2026 88khp
           </CoreText>
         </Col>
       </Box>
