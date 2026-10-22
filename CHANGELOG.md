@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 The stable 3.0 release, with every change from 3.0.0-alpha.0 and 3.0.0-alpha.1. The runtime code is the same as 3.0.0-alpha.1: every built file is byte-identical to the 3.0.0-alpha.1 package on npm.
 
+### Changed
+
+- **Breaking:** the package is renamed to `@88khp/vajra-core`. Install it under the new name and update every import from `@88khp/vajra-ui-core`. The code is the same as `@88khp/vajra-ui-core@3.0.0`, which is deprecated.
+
 ### Fixed
 
 - The package no longer ships compiled tests. `tsconfig.build.json` excludes `*.test.ts` and `*.test.tsx`, and `build` clears `dist` first, so files from earlier builds are not published either. 3.0.0-alpha.1 shipped 28 test files.
@@ -38,7 +42,7 @@ The stable 3.0 release, with every change from 3.0.0-alpha.0 and 3.0.0-alpha.1. 
 
 ### Breaking
 
-- The package is renamed from `@devraj-labs/vajra-ui-core` to `@88khp/vajra-ui-core`. Update the dependency and every import. The repository and docs site moved to `github.com/88khp/vajra-ui-core` and `88khp.github.io/vajra-ui-core`.
+- The package moved to the `@88khp` scope as `@88khp/vajra-ui-core`. Update the dependency and every import. The repository and docs site moved to `github.com/88khp/vajra-ui-core` and `88khp.github.io/vajra-ui-core`.
 - `CorePressable` is built on React Native `Pressable` instead of `TouchableOpacity`. Its props are now based on `PressableProps`, so `TouchableOpacity`-only props such as `delayPressIn` are no longer accepted. Press feedback is an instant opacity change to `activeOpacity` (default `0.2`, pass `1` to turn it off) instead of a fade.
 - `AbsoluteCenter` builds its fill from Box props, so passing `top`, `left`, `right`, `bottom` or `position` now overrides the fill.
 

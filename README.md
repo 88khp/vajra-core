@@ -21,10 +21,10 @@
 
 <br />
 
-[![npm version](https://img.shields.io/npm/v/@88khp/vajra-ui-core)](https://www.npmjs.com/package/@88khp/vajra-ui-core)
-[![bundle size](https://img.shields.io/bundlephobia/min/@88khp/vajra-ui-core)](https://bundlephobia.com/package/@88khp/vajra-ui-core)
-[![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://www.npmjs.com/package/@88khp/vajra-ui-core)
-[![license](https://img.shields.io/npm/l/@88khp/vajra-ui-core)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/@88khp/vajra-core)](https://www.npmjs.com/package/@88khp/vajra-core)
+[![bundle size](https://img.shields.io/bundlephobia/min/@88khp/vajra-core)](https://bundlephobia.com/package/@88khp/vajra-core)
+[![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://www.npmjs.com/package/@88khp/vajra-core)
+[![license](https://img.shields.io/npm/l/@88khp/vajra-core)](./LICENSE)
 
 <p><a href="https://88khp.github.io/vajra-ui-core/"><strong>Documentation</strong></a></p>
 
@@ -55,7 +55,7 @@ Vajra UI Core is neither. It's a thin prop layer over the primitives you're alre
 ## Install
 
 ```sh
-yarn add @88khp/vajra-ui-core
+yarn add @88khp/vajra-core
 ```
 
 `react` and `react-native` are peer dependencies. Nothing else is.
