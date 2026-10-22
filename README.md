@@ -9,7 +9,7 @@
     <td align="center"><strong>~9 kB</strong></td>
     <td align="center"><strong>0</strong></td>
     <td align="center"><strong>0</strong></td>
-    <td align="center"><strong>12</strong></td>
+    <td align="center"><strong>13</strong></td>
   </tr>
   <tr>
     <td align="center">Download size</td>
@@ -47,6 +47,8 @@
 
 Raw React Native layout is verbose: every `View` needs a `style` object with flex direction, alignment, padding and gap. Design systems fix that, but they bring a theme, a provider and a dependency tree. This package is only the layout layer, and it has zero dependencies.
 
+Each component declares the props it accepts and maps each one to a React Native style key, such as `p` to `padding` and `bg` to `backgroundColor`. Props are type-checked. Styles resolve at runtime and are cached per prop set, so there's no build step or compiler.
+
 ### Who it's not for
 
 - Teams that want ready-made components such as buttons, inputs or modals. Use [`@88khp/vajra-ui`](https://github.com/88khp/vajra-ui).
@@ -55,7 +57,7 @@ Raw React Native layout is verbose: every `View` needs a `style` object with fle
 ### What it doesn't do
 
 - It doesn't style anything beyond layout. There are no colors, fonts or themes.
-- It doesn't provide components beyond the 12 layout and text primitives.
+- It doesn't provide components beyond the 13 layout, text and grid primitives.
 - It doesn't need a provider, so there is nothing to wrap your app in.
 
 ---
