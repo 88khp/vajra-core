@@ -15,7 +15,7 @@ Headless `TouchableOpacity` with Box layout props. No default visual — all sty
 ## Usage
 
 ```tsx
-import { CorePressable, CoreText } from '@88khp/vajra-ui-core';
+import { CorePressable, CoreText } from '@88khp/vajra-core';
 
 <CorePressable onPress={handlePress} bg="#2563EB" rounded={8} p={14} align="center">
   <CoreText fontSize={15} fontWeight="600" color="#fff">

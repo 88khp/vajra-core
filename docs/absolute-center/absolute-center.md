@@ -15,7 +15,7 @@ Fills its parent absolutely (`top: 0, bottom: 0, left: 0, right: 0`) and centres
 ## Usage
 
 ```tsx
-import { AbsoluteCenter } from '@88khp/vajra-ui-core';
+import { AbsoluteCenter } from '@88khp/vajra-core';
 
 // Loading overlay
 {loading && (

@@ -15,7 +15,7 @@ Headless `Text` component with typography shorthand props. No default font, size
 ## Usage
 
 ```tsx
-import { CoreText } from '@88khp/vajra-ui-core';
+import { CoreText } from '@88khp/vajra-core';
 
 <CoreText fontSize={16} fontWeight="600" color="#111" lineHeight={24}>
   Hello

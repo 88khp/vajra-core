@@ -15,7 +15,7 @@
 ## Usage
 
 ```tsx
-import { Row } from '@88khp/vajra-ui-core';
+import { Row } from '@88khp/vajra-core';
 
 <Row align="center" gap={12}>
   <Avatar />
