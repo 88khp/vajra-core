@@ -39,9 +39,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/88khp/vajra-ui-core.git"
+    "url": "https://github.com/88khp/vajra-core.git"
   },
-  "homepage": "https://github.com/88khp/vajra-ui-core#readme",
+  "homepage": "https://github.com/88khp/vajra-core#readme",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=18.0.0",

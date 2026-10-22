@@ -18,11 +18,11 @@ const config: Config = {
   url: 'https://88khp.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/vajra-ui-core/',
+  baseUrl: '/vajra-core/',
 
   // GitHub pages deployment config.
   organizationName: '88khp',
-  projectName: 'vajra-ui-core',
+  projectName: 'vajra-core',
 
   onBrokenLinks: 'throw',
 
@@ -42,7 +42,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/88khp/vajra-ui-core/tree/main/website/',
+          editUrl: 'https://github.com/88khp/vajra-core/tree/main/website/',
         },
         blog: false,
         theme: {
@@ -70,7 +70,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/88khp/vajra-ui-core',
+          href: 'https://github.com/88khp/vajra-core',
           label: 'GitHub',
           position: 'right',
         },
@@ -102,7 +102,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/88khp/vajra-ui-core',
+              href: 'https://github.com/88khp/vajra-core',
             },
             {
               label: 'npm',
@@ -110,7 +110,7 @@ const config: Config = {
             },
             {
               label: 'Changelog',
-              href: 'https://github.com/88khp/vajra-ui-core/blob/main/CHANGELOG.md',
+              href: 'https://github.com/88khp/vajra-core/blob/main/CHANGELOG.md',
             },
           ],
         },

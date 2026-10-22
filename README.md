@@ -26,7 +26,7 @@
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://www.npmjs.com/package/@88khp/vajra-core)
 [![license](https://img.shields.io/npm/l/@88khp/vajra-core)](./LICENSE)
 
-<p><a href="https://88khp.github.io/vajra-ui-core/"><strong>Documentation</strong></a></p>
+<p><a href="https://88khp.github.io/vajra-core/"><strong>Documentation</strong></a></p>
 
 <br />
 

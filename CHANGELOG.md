@@ -9,6 +9,7 @@ The stable 3.0 release, with every change from 3.0.0-alpha.0 and 3.0.0-alpha.1. 
 ### Changed
 
 - **Breaking:** the package is renamed to `@88khp/vajra-core`. Install it under the new name and update every import from `@88khp/vajra-ui-core`. The code is the same as `@88khp/vajra-ui-core@3.0.0`, which is deprecated.
+- The repository is renamed to `github.com/88khp/vajra-core`, and the docs site moved to `88khp.github.io/vajra-core`.
 
 ### Fixed
 
